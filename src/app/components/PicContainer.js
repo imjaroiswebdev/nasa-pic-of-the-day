@@ -14,20 +14,30 @@ class PicContainer extends Component {
 
 	componentWillMount() {
 		const END_POINT = 'https://api.nasa.gov/planetary/apod?api_key=';
-
+		
 		axios.get(END_POINT + API_KEY)
 			.then(response => {
-				console.log(response)
+				this.setState({
+					picInfo: response.data
+				})
+				
+				console.log('this.state.picInfo:', this.state.picInfo);
 			})
+			.catch((err) => {
+				console.log(`${err}
+					Fetching data error ocurred.
+				`)
+			})
+
 	}
 
 	render () {
-		console.log(API_KEY);
 
+		const { picInfo } = this.state;
 		return (
 			<div>
 				<div>Picture Container</div>
-				<PicCard />				
+				<PicCard data={picInfo} />				
 			</div>			
 		)
 	}
