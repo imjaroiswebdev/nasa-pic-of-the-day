@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+@import url('https://fonts.googleapis.com/css?family=Bellefair');
+
+$brand-purple: rgb(135,140,223);
+$brand-green: rgb(153,251,198);
+$font-size: 5rem;
+$opensans: 'Open Sans', sans-serif;
+$comfortaa: 'Comfortaa', cursive;
+$bellefair: 'Bellefair', serif;
+$phone-land: '480px';
+$tablet: '768px';
+$desktop: '1170px'; 
+
+body {
+  height: 100vh;
+  background: #eaeaea;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: $font-size;
+  font-weight: 600;
+  font-family: $opensans;
+  padding: 0;
+  margin: 0;
+}
+
+.picture {
+
+	&__card {
+		max-width: 90vw;
+		margin: 10px auto;
+		display: flex;
+		background-color: #FFF;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+		@media (min-width: $tablet) {
+			max-width: 75vw;
+			margin: 50px auto;
+		}
+
+		p {
+			font-size: 11px;
+			padding: 10px 15px;
+			letter-spacing: 0.66px;
+			line-height: 2;
+			text-align: justify;
+			max-width: 300px;
+
+			@media (min-width: $tablet) {
+				font-size: 12px;
+				max-width: 640px;
+				padding: 10px 50px;
+			}
+
+			@media (min-width: $desktop) {
+				max-width: 930px;
+			}
+		}
+
+		span {
+			font-size: 10px;
+			color: #cea21c;
+			margin: 20px 0;
+		}
+	}
+
+	&__title {
+		margin: 25px 0;
+		padding: 10px 25px;
+		font-family: $comfortaa;
+		font-size: 18px;
+		font-weight: 400;
+		color: #ff2400;
+
+		@media (min-width: $tablet) {
+			font-size: 28px;
+			padding: 15px 45px;
+		}
+	}
+
+	&__img_wrapper {
+		padding: 10px;
+
+		img {
+			cursor: pointer;
+			max-height: 250px;
+			filter: drop-shadow(6px 6px 12px rgba(0,0,0,0.45));
+			transition: all 325ms ease-in-out;
+			border-radius: 3px;
+			&:hover {
+				transition: all 325ms ease-in-out;
+				transform: scale(1.07);
+			}
+
+			@media (min-width: $tablet) {
+				max-height: 400px;
+			}
+		}
+	}
+}
+
+.header {
+	text-align: center;
+	font-size: 24px;
+	margin: 20px auto 0px;
+	font-family: $bellefair;
+
+	@media (min-width: $tablet) {
+		font-size: 32px;
+	}
+
+	&__img {
+		width: 150px;
+		height: auto;
+		display: block;
+		margin: auto auto 20px;
+
+		@media (min-width: $tablet) {
+			width: 200px;
+			margin: auto auto 30px;
+		}
+	}
+}
+
+.footer {
+	text-align: center;
+	color: #ff2400;
+	font-family: comfortaa;
+	font-size: 8px;
+	margin: 15px auto 5px;
+	padding-bottom: 5px;
+
+	a:link, a:visited, a:active {
+		text-decoration: none;
+	}
+
+	@media (min-width: $tablet) {
+		font-size: 11px;
+	}
+}
